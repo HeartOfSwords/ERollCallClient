@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 功能描述：判断用户名和密码框是否被选中，选择不同样式 -->
+<!-- 作者：李鹏鹏 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+	<!-- 未获得焦点时 -->
+	<item android:state_window_focused="false" android:drawable="@drawable/bg_edittext_normal">  
+	</item>
+	<!-- 获得焦点 -->
+	<item android:state_focused="true" android:drawable="@drawable/bg_edittext_focuesd">
+	</item>
+</selector>

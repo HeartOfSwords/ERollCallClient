@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 登录按钮样式的设定 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 点击背景 -->
+	<item android:state_pressed="true">
+	    <shape >
+	        <solid android:color="#4169E1"/>
+	        <corners android:radius="10dp"/>
+	    </shape>
+	</item>
+	<!-- 默认背景 -->
+	<item >
+	    <shape >
+	        <solid android:color="#3A5FCD"/>
+	        <corners android:radius="5dp"/>
+	    </shape>
+	</item>
+</selector>

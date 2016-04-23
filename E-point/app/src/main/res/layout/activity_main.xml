@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".StudntActivity">
+<Button
+    android:id="@+id/sign_flag"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="签到"
+    android:onClick="Signed"
+    />
+    <Button
+        android:id="@+id/Shake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="摇一摇"
+        />
+    <Button
+        android:id="@+id/sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查看个人信息"
+        android:onClick="ViewInfo"
+        />
+    <TextView
+        android:id="@+id/show"
+        android:paddingTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#CCbbCC"
+        android:textSize="20dp"
+        android:onClick="ViewInfo"
+        />
+    <ListView
+        android:id="@+id/list_item"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp">
+
+    </ListView>
+</LinearLayout>
