@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.epoint.Activity">
+    package="com.snowalker.erollcall">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/edian_logo"
@@ -11,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".StudntActivity"
+            android:name="com.epoint.Activity.StudntActivity"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".ShakeActivity"
+            android:name="com.epoint.Activity.ShakeActivity"
             android:label="@string/title_activity_shake"></activity>
-        <activity android:name=".Login_activity" >
+        <activity android:name="com.epoint.Activity.Login_activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -41,7 +42,7 @@
         <!-- 重置计数器 -->
         <activity
             android:name="com.example.erollcall_teacher_module.activity.TeacherResetCounter"></activity>
-        <activity android:name=".StudentInfoActivity"></activity>
+        <activity android:name="com.epoint.Activity.StudentInfoActivity"></activity>
     </application>
 
 </manifest>

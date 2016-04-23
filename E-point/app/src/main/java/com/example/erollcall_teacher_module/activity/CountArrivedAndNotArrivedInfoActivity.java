@@ -29,7 +29,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.epoint.Activity.R;
+import com.snowalker.erollcall.R;
 import com.snowalker.tools.JsonTools;
 
 /**

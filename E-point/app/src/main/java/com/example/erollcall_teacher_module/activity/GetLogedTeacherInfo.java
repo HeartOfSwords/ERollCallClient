@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.widget.TextView;
 
-import com.epoint.Activity.R;
+import com.snowalker.erollcall.R;
 
 /**
  * 获取登录教师信息

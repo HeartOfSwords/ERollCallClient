@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 
-import com.epoint.Activity.R;
+import com.snowalker.erollcall.R;
 import com.epoint.properites.ActivityJumpFlag;
 import com.epoint.tools.NetTools;
 

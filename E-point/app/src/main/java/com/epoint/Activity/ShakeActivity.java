@@ -12,6 +12,7 @@ import com.epoint.dao.ShakeRollcall;
 import com.epoint.properites.ActivityJumpFlag;
 import com.epoint.tools.ActiveContainer;
 import com.epoint.tools.Shakehelper;
+import com.snowalker.erollcall.R;
 
 public class ShakeActivity extends ActionBarActivity {
     private Shakehelper shakehelper;

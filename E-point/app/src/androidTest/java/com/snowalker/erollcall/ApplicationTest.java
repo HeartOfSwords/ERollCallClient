@@ -1,4 +1,4 @@
-package com.example.duanjigui.e_point;
+package com.snowalker.erollcall;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

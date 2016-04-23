@@ -25,6 +25,7 @@ import com.epoint.tools.StorgeFlag;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import com.snowalker.erollcall.R;
 public class StudntActivity extends ActionBarActivity  implements View.OnLongClickListener{
     private TextView textView;
     private Button sign;//查看个人信息按钮

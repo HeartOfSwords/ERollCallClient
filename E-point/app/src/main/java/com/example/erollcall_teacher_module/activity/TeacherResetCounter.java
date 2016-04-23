@@ -19,7 +19,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.epoint.Activity.R;
+import com.snowalker.erollcall.R;
 
 /**
  * 教师重置计数器

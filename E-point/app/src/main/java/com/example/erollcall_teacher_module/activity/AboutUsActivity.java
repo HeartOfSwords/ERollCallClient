@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.view.Window;
 import android.app.Activity;
 
-import com.epoint.Activity.R;
+import com.snowalker.erollcall.R;
+
 
 /**
  * 关于我们
