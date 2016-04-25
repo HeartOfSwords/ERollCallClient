@@ -121,13 +121,6 @@ public class CountAllStudentsInfoActivity extends Activity {
 		List<Map<String, String>> data = JsonTools
 				.getAllStudentsInfoFromJson(str);
 		setView(data);
-
-//		try {
-//			Thread.sleep(5000);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 	}
 
 	/**
