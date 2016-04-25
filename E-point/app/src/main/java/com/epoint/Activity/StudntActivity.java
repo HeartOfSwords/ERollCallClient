@@ -9,9 +9,6 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epoint.dao.ClickRoallcall;
@@ -21,17 +18,18 @@ import com.epoint.tools.ActiveContainer;
 import com.epoint.tools.JsonPaser;
 import com.epoint.tools.NetTools;
 import com.epoint.tools.StorgeFlag;
+import com.example.erollcall_teacher_module.activity.AboutUsActivity;
+import com.snowalker.erollcall.R;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import com.snowalker.erollcall.R;
-public class StudntActivity extends ActionBarActivity  implements View.OnLongClickListener{
-    private TextView textView;
+
+public class StudntActivity extends ActionBarActivity implements View.OnLongClickListener{
     private Button sign;//查看个人信息按钮
     private Button Shake;
     private Button sign_flag;//签到按钮
-    private ListView listView;
+    private Button jumpToAboutUs; //关于我们按钮
     private List<Map<String,Object>> list=null;
 
     @Override
@@ -42,9 +40,20 @@ public class StudntActivity extends ActionBarActivity  implements View.OnLongCli
         sign=(Button)findViewById(R.id.sign);
         Shake=(Button)findViewById(R.id.Shake);
         sign_flag=(Button)findViewById(R.id.sign_flag);
-        textView=(TextView)findViewById(R.id.show);
-        listView=(ListView)findViewById(R.id.list_item);
-        StorgeFlag  readstorge=new StorgeFlag() {
+
+        //获取关于我们按钮——李鹏鹏
+        jumpToAboutUs = (Button)findViewById(R.id.about_us);
+        jumpToAboutUs.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StudntActivity.this,
+                        AboutUsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        StorgeFlag readstorge=new StorgeFlag() {
             @Override
             public void unlock() {
                 sign_flag.setEnabled(true);
@@ -77,29 +86,29 @@ public class StudntActivity extends ActionBarActivity  implements View.OnLongCli
         //将子线程的时间放到主线程中处理
         @Override
         public void handleMessage(Message msg) {
-            if (msg.arg1==ActivityJumpFlag.HandlerInformation.SIGNED){ //当点击签到按钮时
+            if (msg.arg1== ActivityJumpFlag.HandlerInformation.SIGNED){ //当点击签到按钮时
                 String s=(String) msg.obj;
-                if (msg.arg2==ActivityJumpFlag.IS_COUNTER_SUCCESS){
-                    Toast.makeText(StudntActivity.this,"亲,你已经签过到了！",Toast.LENGTH_SHORT).show();
+                if (msg.arg2== ActivityJumpFlag.IS_COUNTER_SUCCESS){
+                    Toast.makeText(StudntActivity.this, "亲,你已经签过到了！", Toast.LENGTH_SHORT).show();
                     sign_flag.setEnabled(false);
                     Shake.setEnabled(false);
                     ActivityJumpFlag.JumpFlag=true;
-                }else if("failed to set counter".equals(s)&&msg.arg2==ActivityJumpFlag.IS_COUNTER_FAIL){
-                    Toast.makeText(StudntActivity.this,"亲，签到失败，请重新签到！",Toast.LENGTH_SHORT).show();
+                }else if("failed to set counter".equals(s)&&msg.arg2== ActivityJumpFlag.IS_COUNTER_FAIL){
+                    Toast.makeText(StudntActivity.this, "亲，签到失败，请重新签到！", Toast.LENGTH_SHORT).show();
                 }else if("Successfully reset counter to 1! And that means you are arrived".equals(s)){
                     ActivityJumpFlag.JumpFlag=true;//设置标志位，已经签过到了
-                    Toast.makeText(StudntActivity.this,"签到成功！",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudntActivity.this, "签到成功！", Toast.LENGTH_SHORT).show();
                     sign_flag.setEnabled(false);
                     Shake.setEnabled(false);
                 }else{
-                    Toast.makeText(StudntActivity.this,"签到失败！",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudntActivity.this, "签到失败！", Toast.LENGTH_SHORT).show();
                 }
-            }else if (msg.arg1==ActivityJumpFlag.HandlerInformation.VIEWSELF){  //当点击查看自己信息时
+            }else if (msg.arg1== ActivityJumpFlag.HandlerInformation.VIEWSELF){  //当点击查看自己信息时
                 String info=(String)msg.obj;
                 if (info!=null){
                     JsonPaser paser=new JsonPaser();
                     try {
-                        list=  paser.PaserJson(info,JsonPaser.ARRARY);
+                        list=  paser.PaserJson(info, JsonPaser.ARRARY);
                         for (Map<String,Object> temp:list){
                             Intent intent =new Intent(StudntActivity.this,StudentInfoActivity.class);
                             for (String s:temp.keySet()){
@@ -109,11 +118,11 @@ public class StudntActivity extends ActionBarActivity  implements View.OnLongCli
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
-                        Log.d("paser_error","解析json出错！");
+                        Log.d("paser_error", "解析json出错！");
                     }
                 }
-            }else if (msg.arg1==ActivityJumpFlag.HandlerInformation.NETWRONG){ //当没有联网时
-                Toast.makeText(StudntActivity.this,"亲，网络断了，请连接网络！",Toast.LENGTH_SHORT).show();
+            }else if (msg.arg1== ActivityJumpFlag.HandlerInformation.NETWRONG){ //当没有联网时
+                Toast.makeText(StudntActivity.this, "亲，网络断了，请连接网络！", Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -145,9 +154,9 @@ public class StudntActivity extends ActionBarActivity  implements View.OnLongCli
                 try {
                     info = NetTools.GetStringFromService(ActivityJumpFlag.URL.QUERY_STUDENT_SELF_INFOR + ActivityJumpFlag.UserInfo.USER_ID, NetTools.GET);
                     message.obj=info;
-                    message.arg1=ActivityJumpFlag.HandlerInformation.VIEWSELF;
+                    message.arg1= ActivityJumpFlag.HandlerInformation.VIEWSELF;
                 } catch (IOException e){
-                    message.arg1=ActivityJumpFlag.HandlerInformation.NETWRONG;
+                    message.arg1= ActivityJumpFlag.HandlerInformation.NETWRONG;
                     Log.d("io_error", "未获取输入流！");
                 }
                 handler.sendMessage(message);
