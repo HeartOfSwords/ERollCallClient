@@ -3,98 +3,153 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#CFCFCF"
     >
-    <!-- @author snowalker -->
+    <!-- @author duanjigui -->
+
+    <!-- 标题·部分  -->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000"
         android:orientation="horizontal"
+        android:gravity="center"
         >
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="班级:"
-            android:textSize="40sp"
-            />
-        <TextView
-            android:id="@+id/stu_class"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1330"
-            android:textSize="40sp"
+            android:text="我的信息"
+            android:textColor="#FFF"
+            android:textSize="30sp"
+            android:layout_gravity="center_vertical|center_horizontal"
             />
     </LinearLayout>
+
+    <!-- 头像·部分  -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:background="#6959CD"
+        android:gravity="center"
         >
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="学院:"
-            android:textSize="40sp"
-            />
-        <TextView
-            android:id="@+id/stu_collegr"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="软件学院"
-            android:textSize="40sp"
+            android:layout_height="100dp"
+            android:src="@drawable/student_logo"
             />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EDEDED"
+        android:alpha="0.78"
+        android:fontFamily="微软雅黑"
         >
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
+        <!-- 内容·部分  -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="学号:"
-            android:textSize="40sp"
-            />
-        <TextView
-            android:id="@+id/stu_id"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2013005533"
-            android:textSize="40sp"
-            />
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            >
+            <LinearLayout
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="班级:"
+                    android:textSize="30sp"
+                    />
+                <TextView
+                    android:id="@+id/stu_class"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1330"
+                    android:textColor="#0000CD"
+                    android:textSize="30sp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="学院:"
+                    android:textSize="30sp"
+                    />
+                <TextView
+                    android:id="@+id/stu_collegr"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="软件学院"
+                    android:textColor="#0000CD"
+                    android:textSize="30sp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="学号:"
+                    android:textSize="30sp"
+                    />
+                <TextView
+                    android:id="@+id/stu_id"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2013005533"
+                    android:textColor="#0000CD"
+                    android:textSize="30sp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="姓名:"
+                    android:textSize="30sp"
+                    />
+                <TextView
+                    android:id="@+id/stu_name"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="蓝蓝路"
+                    android:textColor="#0000CD"
+                    android:textSize="30sp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="姓名:"
-            android:textSize="40sp"
-            />
-        <TextView
-            android:id="@+id/stu_name"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="蓝蓝路"
-            android:textSize="40sp"
-            />
-    </LinearLayout>
+
+
 </LinearLayout>
